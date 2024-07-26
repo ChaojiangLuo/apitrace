@@ -90,7 +90,7 @@ void GraphView::wheelEvent(QWheelEvent *e)
 
     /* Scroll view to zoom around mouse */
     dt -= m_viewWidth;
-    dt *= e->position().x();
+    dt *= e->pos().x();
     dt /= width();
 
     m_viewLeft = dt + m_viewLeft;

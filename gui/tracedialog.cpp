@@ -74,7 +74,7 @@ void TraceDialog::setArguments(const QStringList &args)
 QStringList TraceDialog::arguments() const
 {
     QStringList args =
-        argumentsEdit->text().split(';', Qt::SkipEmptyParts);
+        argumentsEdit->text().split(';', QString::SkipEmptyParts);
     return args;
 }
 

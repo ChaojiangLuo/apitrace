@@ -184,7 +184,7 @@ if (ENABLE_GUI)
     if (ENABLE_QT6)
         find_package (Qt6 COMPONENTS Widgets Network ${REQUIRE_GUI})
     else ()
-        find_package (Qt5 5.15 COMPONENTS Widgets Network ${REQUIRE_GUI})
+        find_package (Qt5 5.11 COMPONENTS Widgets Network ${REQUIRE_GUI})
     endif ()
 endif ()
 

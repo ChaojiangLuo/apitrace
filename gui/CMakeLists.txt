@@ -12,7 +12,7 @@ add_definitions (-DQT_FORCE_ASSERTS -DQT_DISABLE_DEPRECATED_BEFORE=0x050F00)
 add_library (qubjson STATIC
     qubjson.cpp
 )
-target_link_libraries (qubjson Qt::Widgets)
+target_link_libraries (qubjson Qt5::Widgets)
 
 if (BUILD_TESTING)
     add_gtest (qubjson_test qubjson_test.cpp)
@@ -57,7 +57,7 @@ set(qapitrace_SRCS
    graphing/timeaxiswidget.cpp
  )
 
-qt_add_resources(qapitrace_SRCS qapitrace.qrc)
+qt5_add_resources(qapitrace_SRCS qapitrace.qrc)
 
 set(qapitrace_UIS
    ui/argumentseditor.ui
@@ -83,7 +83,7 @@ set (CMAKE_AUTOMOC ON)
 # Silence `Note: No relevant classes found. No output generated.`
 set (CMAKE_AUTOMOC_MOC_OPTIONS "-nn")
 
-QT_WRAP_UI (qapitrace_UIS_H ${qapitrace_UIS})
+qt5_wrap_ui(qapitrace_UIS_H ${qapitrace_UIS})
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #add_app_icon(qapitrace_SRCS ../icons/hi*-qapitrace.png)
@@ -98,8 +98,8 @@ add_dependencies(apitrace version)
 add_executable (qapitrace ${qapitrace_SRCS} ${qapitrace_UIS_H})
 
 target_link_libraries (qapitrace
-    Qt::Widgets
-    Qt::Network
+    Qt5::Widgets
+    Qt5::Network
     qubjson
     image
     common
